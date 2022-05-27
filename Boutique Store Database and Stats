@@ -1,0 +1,22 @@
+/**create a boutique store database**/
+
+CREATE TABLE boutique (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, sold REAL);
+INSERT INTO boutique VALUES (1, "dress", 20, 5);
+INSERT INTO boutique VALUES (2, "shirt", 30, 11);
+INSERT INTO boutique VALUES (3, "pants", 20, 9);
+INSERT INTO boutique VALUES (4, "shoes", 25, 4);
+INSERT INTO boutique VALUES (5, "purse", 10, 2);
+
+SELECT *
+FROM boutique;
+
+/**display the database ordered by how many pieces sold**/
+SELECT name, sold
+FROM boutique
+ORDER BY sold DESC;
+
+/**what is the price of the most sold item?**/ 
+SELECT name, price, sold
+FROM boutique
+ORDER BY sold DESC
+LIMIT 1; 
