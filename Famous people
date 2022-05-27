@@ -1,0 +1,37 @@
+/* Create table about the people and what they do here */
+
+
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY, first_name TEXT, last_name TEXT, birthdate TEXT, occupation INTEGER);
+
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Ariana", "Grande", "06-26-1993", 1);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Freddie", "Mercury", "09-05-1946", 1);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Tupac", "Shakur", "06-16-1971", 1);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Beyonce", "Knowles", "09-04-1981", 1);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Michael", "Jackson", "08-29-1958", 1);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Chris", "Evans", "06-13-1981", 2);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Denzel", "Washington", "12-28-1954", 2);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Betty", "White", "01-17-1922", 2);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Jennifer", "Lawrence", "08-15-1990", 2);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Johnny", "Depp", "06-16-1963", 2);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Ryan", "Gosling", "11-12-1980", 2);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Will", "Smith", "09-25-1968", 2);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Naomi", "Campbell", "05-22-1970", 3);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Cindy", "Crawford", "02-20-1966", 3);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Gisele", "Bundchen", "07-20-1980", 3);
+INSERT INTO famous_people (first_name, last_name, birthdate, occupation) VALUES ("Cara", "Delevingne", "08-12-1992", 3);
+
+
+CREATE TABLE profession (id INTEGER PRIMARY KEY,
+title TEXT);
+
+INSERT INTO profession  VALUES (1, "Musician");
+INSERT INTO profession  VALUES (2, "Actor");
+INSERT INTO profession  VALUES (3, "Model");
+
+
+/*What are the occupations of famous people?*/
+SELECT fp.first_name, fp.last_name, p.title
+FROM famous_people as fp
+JOIN profession as p
+ON fp.occupation = p.id
+ORDER BY title;
