@@ -1,2 +1,2 @@
 # SQL
-Khan Academy Mini Projects
+SQL portfolio
